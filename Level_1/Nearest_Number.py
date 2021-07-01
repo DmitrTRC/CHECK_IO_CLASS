@@ -1,5 +1,6 @@
 def nearest_value(values: set, one: int) -> int:
-    return sorted ( {x : abs((x - one)) for x in values}.items(), key=lambda x: x[1])[0][0]
+    value_to_delta = {x : abs((x - one)) for x in values}
+    return sorted ( value_to_delta.items(), key=lambda kv : ( kv[1], kv[0]))[0][0]
     
 
 if __name__ == '__main__':
