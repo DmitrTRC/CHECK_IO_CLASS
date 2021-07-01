@@ -1,6 +1,14 @@
+def conver_to_int_saftely(word: str) -> int:
+    i_word = 0
+    try:
+        i_word = int(word)
+    except ValueError:
+        pass
+    return i_word
+
+
 def sum_numbers(text: str) -> int:
-    # your code here
-    return 0
+    return sum(map(conver_to_int_saftely, text.split()))
 
 
 if __name__ == '__main__':
@@ -12,8 +20,8 @@ if __name__ == '__main__':
     assert sum_numbers('who is 1st here') == 0
     assert sum_numbers('my numbers is 2') == 2
     assert sum_numbers('This picture is an oil on canvas '
- 'painting by Danish artist Anna '
- 'Petersen between 1845 and 1910 year') == 3755
+                       'painting by Danish artist Anna '
+                       'Petersen between 1845 and 1910 year') == 3755
     assert sum_numbers('5 plus 6 is') == 11
     assert sum_numbers('') == 0
     print("Coding complete? Click 'Check' to earn cool rewards!")
