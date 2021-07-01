@@ -2,8 +2,7 @@ from typing import Iterable
 
 
 def remove_all_before(items: list, border: int) -> Iterable:
-    # your code here
-    return items
+    return items[items.index(border)::] if border in items else items
 
 
 if __name__ == '__main__':
