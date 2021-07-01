@@ -2,6 +2,8 @@ def nearest_value(values: set, one: int) -> int:
     value_to_delta = {x : abs((x - one)) for x in values}
     return sorted ( value_to_delta.items(), key=lambda kv : ( kv[1], kv[0]))[0][0]
     
+    # Better Solution
+    # return min(values, key=lambda n: (abs(one - n), n))
 
 if __name__ == '__main__':
     print("Example:")
