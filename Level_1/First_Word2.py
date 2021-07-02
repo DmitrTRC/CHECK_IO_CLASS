@@ -2,21 +2,8 @@ def first_word(text: str) -> str:
     """
         returns the first word in a given text.
     """
-    delimiters = (' ', ',', '.')
-    result_str = ''
-    index = 0
-    result_str = ''.join( char if char.isalpha() else ' ' for char in text ).split()[0]
-    # while index < (text.__len__() - 1):
-    #     if text[index] in delimiters:
-    #         index += 1
-    #         continue
-    #     while text[index] not in delimiters:
-    #         result_str += text[index]
-    #         index += 1
-    #     else:
-    #         return result_str
 
-    return result_str
+    return ''.join(char if (char.isalpha() or (char == "'")) else ' ' for char in text).split()[0]
 
 
 if __name__ == '__main__':
