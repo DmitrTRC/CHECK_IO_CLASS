@@ -1,3 +1,4 @@
 {
-    "editor.fontFamily": "PragmataPro"
+    "editor.fontFamily": "PragmataPro",
+    "python.pythonPath": "c:\\Users\\moroz\\source\\repos\\CHECK_IO_CLASS\\venv\\Scripts\\python.exe"
 }
