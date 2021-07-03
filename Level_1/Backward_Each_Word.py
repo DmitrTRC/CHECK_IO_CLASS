@@ -8,13 +8,16 @@ def backward_string_by_word(text: str) -> str:
         else: # Cant find end of the string !
             if accumulator:
                 # if word in accumulator and next is space
-                result_array.append(reversed(accumulator) + ' ')
+                result_array.append(accumulator[::-1] + ' ')
                 accumulator = ''
             else:
                 result_array.append(char)
 
-    print(f'Answer : {result_array=}')
+    if accumulator: result_array.append(accumulator[::-1] )
+
+    print(f'Answer : ', ''.join(result_array))
     return ''.join(result_array)
+    
 
 
 if __name__ == '__main__':
