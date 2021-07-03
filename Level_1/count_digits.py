@@ -1,6 +1,5 @@
 def count_digits(text: str) -> int:
-    # your code here
-    return 0
+    return sum (char.isdigit() for char in text)
 
 
 if __name__ == '__main__':
