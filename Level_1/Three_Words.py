@@ -13,15 +13,12 @@ def check_counter() -> bool:
         return counter
     return count_word
 
-
 def checkio(words: str) -> bool:
-    get_cur_count = check_counter()
+    get_cur_count = check_counter() # !!!! Not in for-loop
     for word in words.split():
         cur_count = get_cur_count(word)
-
         if cur_count == -1:
             return True
-
     return False
 
 
