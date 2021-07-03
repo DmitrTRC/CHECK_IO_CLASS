@@ -1,10 +1,11 @@
+from pprint import pprint
+
+
 def bigger_price(limit: int, data: list) -> list:
     """
         TOP most expensive goods
     """
-    # your code here
-    return None
-
+    return  sorted (data,  key=lambda x: -x['price'])[:limit]
 
 if __name__ == '__main__':
     from pprint import pprint
