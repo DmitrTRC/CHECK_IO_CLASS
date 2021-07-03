@@ -1,8 +1,8 @@
-from datetime import datetime , timedelta
+from datetime import date , timedelta
 
 
 def days_diff(a, b) -> int:
-    return (datetime(a) - datetime(b)).days()
+    return abs((date(*a) - date(*b)).days)
 
 
 
