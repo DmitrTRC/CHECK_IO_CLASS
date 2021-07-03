@@ -15,7 +15,6 @@ def backward_string_by_word(text: str) -> str:
 
     if accumulator: result_array.append(accumulator[::-1] )
 
-    print(f'Answer : ', ''.join(result_array))
     return ''.join(result_array)
     
 
