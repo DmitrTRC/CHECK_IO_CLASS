@@ -18,12 +18,9 @@ def checkio(words: str) -> bool:
     get_cur_count = check_counter()
     for word in words.split():
         cur_count = get_cur_count(word)
-        print ( f'Checking word : {word} with {cur_count=}')
 
         if cur_count == -1:
             return True
-        else:
-            continue
 
     return False
 
