@@ -9,19 +9,14 @@ If the final marker comes before the initial marker, then return an empty string
 Input: Three arguments. All of them are strings. The second and third arguments are the initial and final markers.
 
 Output: A string.
-
-Example:
-
-between_markers('What is >apple<', '>', '<') == 'apple'
-between_markers('No[/b] hi', '[b]', '[/b]') == 'No'
 '''
 
 def between_markers(text: str, begin: str, end: str) -> str:
     """
         returns substring between two given markers
     """
-    # your code here
-    return ''
+    
+    return  text[text.index(begin)+1:text.index(end)]
 
 
 if __name__ == '__main__':
