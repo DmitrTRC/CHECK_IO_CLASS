@@ -28,9 +28,10 @@ class Boundary:
     def __init__(self, text: str, begin: str, end: str):
 
         assert begin != end, f'Begin must be different from end'
+        self._source = text
         self._end_position = text.__len__()
-        self.initial_marker = Marker(begin).seek(text)
-        self.final_marker = Marker(end).seek(text)
+        self.initial_marker = Marker(begin).seek(self._source)
+        self.final_marker = Marker(end).seek(self._source)
 
     def _logic_check(self):
         if not self.initial_marker:
@@ -38,8 +39,13 @@ class Boundary:
 
         if not self.final_marker:
             self.final_marker.set(self._end_position)
+        
+        if self.initial_marker > self.final_marker:
+            self.initial_marker.set(0)
+            self.final_marker.set(0)
 
-        pass
+
+        
 
 def between_markers(text: str, begin: str, end: str) -> str:
     """
