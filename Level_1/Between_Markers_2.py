@@ -17,7 +17,7 @@ class Marker:
         self.position = position
         self.symbol = symbol
 
-    def seek(text: str):
+    def seek( source: str):
         pass
 
 
