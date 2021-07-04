@@ -17,12 +17,17 @@ class Marker:
         self.position = position
         self.symbol = symbol
 
-    def seek(text: str):
-        pass
+    def seek(self, source: str):
+        self.position = source.find(self.symbol)
 
 
 class Boundary:
     def __init__(self, text: str, begin: str, end: str):
+        self.left_marker = Marker(begin).seek(text)
+        self.right_marker = Marker(end).seek(text)
+
+    def _logic_check():
+        pass
 
 
 def between_markers(text: str, begin: str, end: str) -> str:
