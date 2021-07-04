@@ -14,21 +14,32 @@ Output: A string.
 
 class Marker:
     def __init__(self, symbol: str, position: int = 0):
-        self.position = position
+        self._position = position
         self.symbol = symbol
 
     def seek(self, source: str):
         self.position = source.find(self.symbol)
 
+    def set(self, value):
+        self.position = value
+
 
 class Boundary:
     def __init__(self, text: str, begin: str, end: str):
-        self.left_marker = Marker(begin).seek(text)
-        self.right_marker = Marker(end).seek(text)
 
-    def _logic_check():
+        assert begin != end, f'Begin must be different from end'
+        self._end_position = text.__len__()
+        self.initial_marker = Marker(begin).seek(text)
+        self.final_marker = Marker(end).seek(text)
+
+    def _logic_check(self):
+        if not self.initial_marker:
+            self.initial_marker.set(0)
+
+        if not self.final_marker:
+            self.final_marker.set(self._end_position)
+
         pass
-
 
 def between_markers(text: str, begin: str, end: str) -> str:
     """
