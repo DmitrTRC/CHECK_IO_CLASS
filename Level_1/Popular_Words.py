@@ -1,6 +1,11 @@
 def popular_words(text: str, words: list) -> dict:
-    # your code here
-    return None
+    frequency_table = dict()
+    text_splitted_arr = list ( map ( str.lower, text.split()))
+
+    for word in words:
+        frequency_table[word] = text_splitted_arr.count(word)
+
+    return frequency_table
 
 
 if __name__ == '__main__':
