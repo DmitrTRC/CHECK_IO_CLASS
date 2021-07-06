@@ -1,14 +1,9 @@
-from enum import Enum
-
-
-class ChessBoard:
-    pass
 
 
 class Coord:
-    def __init__(self, letter, digit):
-        self.letter = letter
-        self.digit = digit
+    def __init__(self, draft_coord='a1'):
+        self.letter: str = draft_coord[0]
+        self.digit: int = int(draft_coord[1])
 
 
 class ChessFigure:
