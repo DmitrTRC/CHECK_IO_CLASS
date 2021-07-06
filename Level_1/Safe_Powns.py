@@ -1,15 +1,22 @@
+from enum import Enum
+
+
+class ChessBoard:
+    pass
+
+
 class Coord:
     def __init__(self, letter, digit):
         self.letter = letter
         self.digit = digit
 
 
-class Chess_Figure:
+class ChessFigure:
     def __init__(self, isWite: bool = True):
         self.is_white = isWite
 
 
-class Pawn(Chess_Figure):
+class Pawn(ChessFigure):
     pass
 
 
