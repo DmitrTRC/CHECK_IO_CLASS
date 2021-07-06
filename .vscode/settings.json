@@ -1,6 +1,6 @@
 {
     "editor.fontFamily": "PragmataPro",
-    "python.pythonPath": "/Users/dmitrymorozov/dev/CHECK_IO_CLASS/env/bin/python",
+    "python.pythonPath": "c:\\Users\\moroz\\source\\repos\\CHECK_IO_CLASS\\venv\\Scripts\\python.exe",
     "editor.fontSize": 18,
     "debug.console.fontSize": 18,
     "scm.inputFontSize": 16,
