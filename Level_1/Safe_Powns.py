@@ -2,17 +2,26 @@
 
 class Coord:
     def __init__(self, draft_coord='a1'):
-        self.letter: str = draft_coord[0]
-        self.digit: int = int(draft_coord[1])
+        coord = draft_coord
 
 
 class ChessFigure:
     def __init__(self, isWite: bool = True):
         self.is_white = isWite
+        self.coord = Coord()
 
 
 class Pawn(ChessFigure):
-    pass
+    def __init__(self):
+        super().__init__()
+
+    def get_guarded_positions(self):
+        # position_1 = Coord(self.coord.digit - 1, ord(self.coord.letter) - 1)
+        positions = []
+        for i in range (2):
+            if self.coord.letter != 'a':
+                positions.append(Coord())
+
 
 
 def safe_pawns(pawns: set) -> int:
