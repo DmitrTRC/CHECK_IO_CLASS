@@ -1,9 +1,16 @@
+import math
+
+
 def split_list(items: list) -> list:
-    # your code here
-    return [items]
+    result_lst = [
+        items[i : i + math.ceil(items.__len__() / 2)]
+        for i in range(0, items.__len__(), items.__len__() // 2)
+    ]
+
+    return result_lst
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("Example:")
     print(split_list([1, 2, 3, 4, 5, 6]))
 
