@@ -1,34 +1,19 @@
-
-
-class Coord:
-    def __init__(self, draft_coord='a1'):
-        coord = draft_coord
-
-
-class ChessFigure:
-    def __init__(self, isWite: bool = True):
-        self.is_white = isWite
-        self.coord = Coord()
-
-
-class Pawn(ChessFigure):
-    def __init__(self):
-        super().__init__()
-
-    def get_guarded_positions(self):
-        # position_1 = Coord(self.coord.digit - 1, ord(self.coord.letter) - 1)
-        positions = []
-        for i in range (2):
-            if self.coord.letter != 'a':
-                positions.append(Coord())
-
-
-
 def safe_pawns(pawns: set) -> int:
-    return 0
+    unguarded: int = 0
+    for pawn in pawns:
+        safe_position_left = chr(ord(pawn[0]) - 1) + str(int(pawn[1]) - 1)
+        safe_position_right = chr(ord(pawn[0]) + 1) + str(int(pawn[1]) - 1)
+
+        for position in (safe_position_left, safe_position_right):
+            if position not in pawns:
+                continue
+            else:
+                unguarded += 1
+                break
+    return unguarded
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # These "asserts" using only for self-checking and not necessary for auto-testing
     assert safe_pawns({"b4", "d4", "f4", "c3", "e3", "g5", "d2"}) == 6
     assert safe_pawns({"b4", "c4", "d4", "e4", "f4", "g4", "e5"}) == 1
