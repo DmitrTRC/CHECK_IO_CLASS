@@ -38,12 +38,20 @@ MORSE = {
 }
 
 
-def morse_decoder(code):
-    # replace this for solution
-    return code
-
+def morse_decoder(code: str) -> str:
+    message_arr = code.split("   ")
+    result_str = ""
+    for word in message_arr:
+        for letter in word.split():
+            result_str += MORSE.get(letter, '**')
+        result_str += " "
+    return result_str.rstrip().capitalize() 
 
 if __name__ == "__main__":
+    print("test1 ")
+    print(morse_decoder(".. -   .-- .- ...   .-   --. --- --- -..   -.. .- -.--"))
+    print('test2 ')
+    print(morse_decoder("... --- -- .   - . -..- -"))
     print("Example:")
     print(morse_decoder("... --- ..."))
 
