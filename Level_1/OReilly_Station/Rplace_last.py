@@ -1,6 +1,5 @@
 def replace_last(line: list) -> list:
-    # your code here
-    return None
+    return line[-1]
 
 
 if __name__ == '__main__':
