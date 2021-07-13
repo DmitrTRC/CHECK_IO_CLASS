@@ -1,5 +1,9 @@
 def replace_last(line: list) -> list:
-    return line[-1]
+    res_arr = line.copy()
+    if line.__len__() > 1: 
+        res_arr.insert(0, res_arr.pop())
+    return res_arr
+
 
 
 if __name__ == '__main__':
