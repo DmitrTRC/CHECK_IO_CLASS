@@ -1,4 +1,5 @@
 def backward_string(val: str) -> str:
+    result = [val[::-1]]
     return val[::-1]
     
 

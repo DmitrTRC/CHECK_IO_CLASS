@@ -13,3 +13,4 @@ if __name__ == '__main__':
     assert is_acceptable_password('muchlonger') == True
     assert is_acceptable_password('ashort') == False
     print("Coding complete? Click 'Check' to earn cool rewards!")
+v
