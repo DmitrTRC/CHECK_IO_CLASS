@@ -1,4 +1,6 @@
 {
     "editor.fontFamily": "PragmataPro",
-    "python.pythonPath": "/Users/dmitrymorozov/Desktop/PYProjects/CHECK_IO_CLASS/venv/bin/python"
+    "python.pythonPath": "/Users/dmitrymorozov/Desktop/PYProjects/CHECK_IO_CLASS/venv/bin/python",
+    "python.formatting.provider": "black",
+    "C_Cpp.default.configurationProvider": "go2sh.cmake-integration"
 }
