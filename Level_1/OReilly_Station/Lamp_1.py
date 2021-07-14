@@ -1,19 +1,63 @@
-def is_majority(items: list) -> bool:
-    return items.count(True) > (items.__len__() - items.count(True))
+from datetime import datetime
+from typing import List
+
+def sum_light(els: List[datetime]) -> int:
+    """
+        how long the light bulb has been turned on
+    """
+    accumulator_hours = 0
+    
+
+    for index, pressed_button in enumerate ( reversed(els) ):
+        start_time = pressed_button
+        if index and index % 2:
+            pass
+        
+    return accumulator_hours
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     print("Example:")
-    print(is_majority([True, True, False, True, False]))
-    print("Parity Test")
-    print(is_majority([True, True, False, False]))
-
+    print(sum_light([
+        datetime(2015, 1, 12, 10, 0 , 0),
+        datetime(2015, 1, 12, 10, 10 , 10),
+        datetime(2015, 1, 12, 11, 0 , 0),
+        datetime(2015, 1, 12, 11, 10 , 10),
+    ]))
+    
     # These "asserts" are used for self-checking and not for an auto-testing
-    assert is_majority([True, True, False, True, False]) == True
-    assert is_majority([True, True, False]) == True
-    assert is_majority([True, True, False, False]) == False
-    assert is_majority([True, True, False, False, False]) == False
-    assert is_majority([False]) == False
-    assert is_majority([True]) == True
-    assert is_majority([]) == False
-    print("Coding complete? Click 'Check' to earn cool rewards!")
+    assert sum_light(els=[
+        datetime(2015, 1, 12, 10, 0 , 0),
+        datetime(2015, 1, 12, 10, 10 , 10),
+    ]) == 610
+
+    assert sum_light([
+        datetime(2015, 1, 12, 10, 0 , 0),
+        datetime(2015, 1, 12, 10, 10 , 10),
+        datetime(2015, 1, 12, 11, 0 , 0),
+        datetime(2015, 1, 12, 11, 10 , 10),
+    ]) == 1220
+
+    assert sum_light([
+        datetime(2015, 1, 12, 10, 0 , 0),
+        datetime(2015, 1, 12, 10, 10 , 10),
+        datetime(2015, 1, 12, 11, 0 , 0),
+        datetime(2015, 1, 12, 11, 10 , 10),
+        datetime(2015, 1, 12, 11, 10 , 10),
+        datetime(2015, 1, 12, 12, 10 , 10),
+    ]) == 4820
+
+    assert sum_light([
+        datetime(2015, 1, 12, 10, 0 , 0),
+        datetime(2015, 1, 12, 10, 0 , 1),
+    ]) == 1
+
+    assert sum_light([
+        datetime(2015, 1, 12, 10, 0 , 0),
+        datetime(2015, 1, 12, 10, 0 , 10),
+        datetime(2015, 1, 12, 11, 0 , 0),
+        datetime(2015, 1, 13, 11, 0 , 0),
+    ]) == 86410
+
+    print("The first mission in series is completed? Click 'Check' to earn cool rewards!")
+
